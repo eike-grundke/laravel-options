@@ -1,0 +1,53 @@
+{
+    "name": "eike-grundke/laravel-options",
+    "description": "Global options loaded from the database",
+    "keywords": [
+        "eike-grundke"
+    ],
+    "homepage": "https://github.com/eike-grundke/laravel-options",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Eike Grundke",
+            "email": "grundke@eindruck.media",
+            "homepage": "https://eindruck.media",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.6"
+    },
+    "require-dev": {
+        "orchestra/database": "^3.7",
+        "orchestra/testbench": "~3.7"
+    },
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
+        "psr-4": {
+            "EikeGrundke\\Options\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "EikeGrundke\\Options\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "EikeGrundke\\Options\\OptionsServiceProvider"
+            ],
+            "aliases": {
+                "Option": "EikeGrundke\\Options\\OptionFacade"
+            }
+        }
+    }
+}
